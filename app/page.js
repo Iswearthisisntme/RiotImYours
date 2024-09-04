@@ -68,27 +68,27 @@ function App() {
                 <h1>This is Chris Kim!</h1>
                 <img src={headImage} alt="Chris Kim" className={styles.headImage} />
                 <h2 id="skills">A passionate Programmer capable of using but not limited to:</h2>
-                <div className="important-skills">
+                <div className={styles.importantSkills}>
                     {importantSkills.map((skill, index) => (
-                        <div key={index} className="important-skill-item">
+                        <div key={index} className={styles.importantSkillItem}>
                             {skill.icon}
                             <span>{skill.name}</span>
                         </div>
                     ))}
                 </div>
-                <a href="/resume.pdf" download className="download-button">Download Resume</a>
+                <a href="/resume.pdf" download className={styles.downloadButton}>Download Resume</a>
                 <input
                     id="skills"
                     type="text"
                     placeholder="Search for other skills Chris knows!"
                     value={searchTerm}
                     onChange={handleSearchChange}
-                    className="search-bar"
+                    className={styles.searchBar}
                 />
-                <div className="skills-list">
+                <div className={styles.skillsList}>
                     <ul>
                         {filteredSkills.map((skill, index) => (
-                            <li key={index} className="skill-item">
+                            <li key={index} className={styles.skillsItem}>
                                 {skill.icon} {skill.name}
                             </li>
                         ))}
@@ -96,35 +96,35 @@ function App() {
                 </div>
             </div>
 
-            <div className="triangle1"></div>
-            <div className="triangle2"></div>
-            <div className="body">
-                <div className="projects" id="projects">
-                    <div className={"projectleft"}>
+            <div className={styles.triangle1}></div>
+            <div className={styles.triangle2}></div>
+            <div className={styles.body}>
+                <div className={styles.projects} id="projects">
+                    <div className={styles.projectleft}>
                         <img src={dreamlogImage}/>
-                        <div className={"projectInfo"}>
+                        <div className={styles.projectInfo}>
                             <h2>Web dev Project: Dream Log</h2>
                             <p>
                                 A Journaling website made with Next.js and firebase that allows users to
                                 write journals and reflect on them through statistics
                             </p>
                             <a href={""} >
-                                <div className={"projectLink"}>
+                                <div className={styles.projectLink}>
                                     Live App
                                 </div>
                             </a>
                         </div>
                     </div>
 
-                    <div className={"projectright"}>
-                        <div className={"projectInfo"}>
+                    <div className={styles.projectright}>
+                        <div className={styles.projectInfo}>
                             <h2>Game Dev Project: 1v1 Fighting Game</h2>
                             <p>
                                 A 1 vs 1 fighting game made in Javascript that can be played
                                 through a browser. Has multiple characters, moveset and more.
                             </p>
                             <a href={""} >
-                                <div className={"projectLink"}>
+                                <div className={styles.projectLink}>
                                     Live App
                                 </div>
                             </a>
@@ -135,8 +135,8 @@ function App() {
             </div>
 
             <h1>Contact Chris!</h1>
-            <div className="contact" id="contacts">
-                <div className={"links"}>
+            <div className={styles.contact} id="contacts">
+                <div className={styles.links}>
                     <p>
                         <a href="mailto:jhkimuniversity@gmail.com"><MdEmail/> jhkimuniversity@gmail.com</a>
                         <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer"><FaLinkedin /> LinkedIn</a>
@@ -148,27 +148,27 @@ function App() {
                         type="text"
                         name="name"
                         placeholder="Your Name"
-                        className="contact-input"
+                        className={styles.contactInput}
                         required
                     />
                     <input
                         type="text"
                         name="email"
                         placeholder="Your Email"
-                        className="contact-input"
+                        className={styles.contactInput}
                         required
                     />
                     <textarea
                         name="message"
                         row="6"
                         placeholder="Your Message"
-                        className="contact-input"
+                        className={styles.contactInput}
                         required
                     ></textarea>
                     <button type="submit">Send Message</button>
                 </form>
             </div>
-            <div className={"background"}>helo</div>
+            <div className={styles.background}>helo</div>
         </div>
     );
 }

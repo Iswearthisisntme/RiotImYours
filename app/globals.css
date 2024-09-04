@@ -61,7 +61,7 @@ a:link, a:visited, a:hover, a:active {
   background-color: var(--background-color3);
 }
 
-.skills-list ul:after{
+.skillsList ul:after{
   content:'';
   position: absolute;
   transform: translate(0, -50%);
@@ -125,7 +125,7 @@ h2 {
   border-radius: 4px;
 }
 
-.important-skills {
+.importantSkills {
   gap: 10px;
   padding: 0;
   display: flex;
@@ -135,7 +135,7 @@ h2 {
 }
 
 
-.important-skill-item {
+.importantSkillItem {
   font-size: 1.6rem;
   font-weight: bold;
   border: 2px solid transparent;
@@ -162,14 +162,14 @@ h2 {
   z-index: -1;
 }
 
-.skills-list {
+.skillsList {
   display: flex;
   width: 100%;
   height: 10rem;
   justify-content: center;
 }
 
-.skills-list ul {
+.skillsList ul {
   list-style-type: none;
   width:50%;
   height: 2rem;
@@ -264,7 +264,7 @@ h2 {
   height:100%
 }
 
-.download-button {
+.downloadButton {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
@@ -307,7 +307,7 @@ h2 {
   margin: 10px 0;
 }
 
-.contact-input {
+.contactInput {
   display: block;
   width: 400px;
   max-width: 400px;
