@@ -1,6 +1,7 @@
 "use client";
 
-import styles from "./globals.css";
+import "./globals.css";
+import styles from './page.module.css';
 import React, { useState } from 'react';
 import headImage from "@/public/head.jpg";
 import dreamlogImage from "@/public/pic01.jpg";
@@ -52,17 +53,30 @@ function App() {
 
     return (
         <div className={styles.page}>
-            <div className={`sidemenu ${isOpen ? 'open' : ''}`}>
+            <div className={`${styles.sidemenu} ${isOpen ? styles.open : ''}`}>
                 <ul>
-                    <li><a href="#header"><IoMdHome /></a><span className={"tooltip"}>About</span></li>
-                    <li><a href="#skills"><SiHyperskill /></a><span className={"tooltip"}>Skills</span></li>
-                    <li><a href="#projects"><GoProject /></a><span className={"tooltip"}>Projects</span></li>
-                    <li><a href="#contacts"><RiContactsBook2Fill /></a><span className={"tooltip"}>Contacts</span></li>
+                    <li>
+                        <a href="#header"><IoMdHome /></a>
+                        <span className={styles.tooltip}>About</span>
+                    </li>
+                    <li>
+                        <a href="#skills"><SiHyperskill /></a>
+                        <span className={styles.tooltip}>Skills</span>
+                    </li>
+                    <li>
+                        <a href="#projects"><GoProject /></a>
+                        <span className={styles.tooltip}>Projects</span>
+                    </li>
+                    <li>
+                        <a href="#contacts"><RiContactsBook2Fill /></a>
+                        <span className={styles.tooltip}>Contacts</span>
+                    </li>
                 </ul>
-                <div className={styles.arrow}>
+                <div className={styles.arrow} onClick={toggleMenu}>
                     <span>{isOpen ? ' < ' : ' > '}</span>
                 </div>
             </div>
+
 
             <div className={styles.header} id="header">
                 <h1>This is Chris Kim!</h1>
@@ -165,7 +179,7 @@ function App() {
                         className={styles.contactInput}
                         required
                     ></textarea>
-                    <button type="submit">Send Message</button>
+                    <button className={styles.button} type="submit">Send Message</button>
                 </form>
             </div>
             <div className={styles.background}>helo</div>
