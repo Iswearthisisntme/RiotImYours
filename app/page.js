@@ -3,8 +3,11 @@
 import "./globals.css";
 import styles from './page.module.css';
 import React, { useState } from 'react';
-import headImage from "@/public/head.jpg";
-import dreamlogImage from "@/public/pic01.jpg";
+import Image from 'next/image';
+import headImage from './images/head.jpg';
+import dreamlogImage from './images/DreamLog.png';
+import JSFightingGame from './images/JSFightingGame.png'
+import RoguelikeGame from './images/RoguelikeGame.png'
 import { FaJava, FaPython, FaJs, FaReact, FaUnity, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { SiCplusplus, SiGodotengine, SiBlender, SiAdobeillustrator, SiAdobephotoshop, SiHyperskill } from 'react-icons/si';
 import { PiYarn } from 'react-icons/pi';
@@ -80,8 +83,7 @@ function App() {
 
             <div className={styles.header} id="header">
                 <h1>This is Chris Kim!</h1>
-                <img src={headImage} alt="Chris Kim" className={styles.headImage} />
-                <h2 id="skills">A passionate Programmer capable of using but not limited to:</h2>
+                <Image src={headImage} alt="Chris Kim" className={styles.headImage} />                <h2 id="skills">A passionate Programmer capable of using but not limited to:</h2>
                 <div className={styles.importantSkills}>
                     {importantSkills.map((skill, index) => (
                         <div key={index} className={styles.importantSkillItem}>
@@ -102,7 +104,7 @@ function App() {
                 <div className={styles.skillsList}>
                     <ul>
                         {filteredSkills.map((skill, index) => (
-                            <li key={index} className={styles.skillsItem}>
+                            <li key={index} className={styles.skillItem}>
                                 {skill.icon} {skill.name}
                             </li>
                         ))}
@@ -114,8 +116,25 @@ function App() {
             <div className={styles.triangle2}></div>
             <div className={styles.body}>
                 <div className={styles.projects} id="projects">
+                    <div className={styles.projectright}>
+                        <div className={styles.projectInfo}>
+                            <h2>Game Dev Project: Hack and Slash Game</h2>
+                            <p>
+                                A Hack and Slash game made using Godot Game engine and C++
+                                using my own sprites
+                            </p>
+                            <a href={""} >
+                                <div className={styles.projectLink}>
+                                    Live App
+                                </div>
+                            </a>
+                        </div>
+                        <Image src={RoguelikeGame} alt="Roguelike Game" className={styles.projectImage}/>
+                    </div>
+
+
                     <div className={styles.projectleft}>
-                        <img src={dreamlogImage}/>
+                        <Image src={dreamlogImage} alt="Dream Log" className={styles.projectImage}/>
                         <div className={styles.projectInfo}>
                             <h2>Web dev Project: Dream Log</h2>
                             <p>
@@ -143,7 +162,7 @@ function App() {
                                 </div>
                             </a>
                         </div>
-                        <img src={dreamlogImage}/>
+                        <Image src={JSFightingGame} alt="JS Fighting Game" className={styles.projectImage}/>
                     </div>
                 </div>
             </div>
