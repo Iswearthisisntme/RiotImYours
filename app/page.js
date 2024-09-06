@@ -209,7 +209,7 @@ function App() {
                         required
                     />
                     <input
-                        type="text"
+                        type="email" // Use email type for better validation
                         name="email"
                         placeholder="Your Email"
                         className={styles.contactInput}
@@ -217,17 +217,18 @@ function App() {
                     />
                     <textarea
                         name="message"
-                        row="6"
+                        rows="6" // Fix the "rows" attribute typo
                         placeholder="Your Message"
                         className={styles.contactInput}
                         required
                     ></textarea>
-                    <button className={styles.button} type="submit">Send Message</button>
+                    <button className={styles.button} type="submit">
+                        Send Message
+                    </button>
                 </form>
             </div>
-            <div className={styles.background}>helo</div>
+            <div className={styles.background}>Background Text</div>
         </div>
     );
-}
-
+};
 export default App;

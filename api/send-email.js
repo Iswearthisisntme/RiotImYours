@@ -1,4 +1,5 @@
-import nodemailer from 'nodeemailer';
+import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
+import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
@@ -7,14 +8,14 @@ export default async function handler(req, res) {
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-              user: process.env.EMAIL_USER, // Your email address
-              pass: process.env.EMAIL_PASS, // Your email password
+              user: process.env.EMAIL_USER,
+              pass: process.env.EMAIL_PASS,
             },
           });
 
           const mailOptions = {
             from: email,
-            to: process.env.EMAIL_TO, // Your email address to receive the message
+            to: process.env.EMAIL_TO,
             subject: `New message from ${name}`,
             text: message,
           };
