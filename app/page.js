@@ -14,6 +14,7 @@ import { GoProject } from "react-icons/go";
 import { MdEmail } from "react-icons/md";
 
 function App() {
+
     const importantSkills = [
         { name: 'Java', icon: <FaJava /> },
         { name: 'Python', icon: <FaPython /> },
@@ -50,6 +51,29 @@ function App() {
     const filteredSkills = skills.filter(skill =>
                                              skill.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
+
+    const handleSubmit = async (e) => {
+        e.preventDefault(); // Prevent page refresh
+
+        const formData = {
+            name: e.target.name.value,
+            email: e.target.email.value,
+            message: e.target.message.value,
+        };
+
+        try {
+            const response = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+
+            const result = await response.json();
+            alert(result.message);
+        } catch (error) {
+            alert('Error sending message. Please try again.');
+        }
+    };
 
     return (
         <div className={styles.page}>
@@ -157,7 +181,7 @@ function App() {
                         <a href="https://github.com/your-profile" target="_blank" rel="noopener noreferrer"><FaGithub /> GitHub</a>
                     </p>
                 </div>
-                <form name="msgme">
+                <form name="msgme" onSubmit={handleSubmit}>
                     <input
                         type="text"
                         name="name"
