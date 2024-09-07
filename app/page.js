@@ -116,7 +116,9 @@ function App() {
                         </div>
                     ))}
                 </div>
-                <a href="/resume.pdf" download className={styles.downloadButton}>Download Resume</a>
+                <a href="/Juhyun_Kim_Resume.pdf"  download="Juhyun_Kim_Resume.pdf" className={styles.downloadButton}>
+                    Download Resume
+                </a>
                 <input
                     id="skills"
                     type="text"
@@ -147,9 +149,9 @@ function App() {
                                 A Hack and Slash game made using Godot Game engine and C++
                                 using my own sprites
                             </p>
-                            <a href={""} >
+                            <a href={"https://drive.google.com/drive/folders/1G_3T5NUD6mYlmVYiX9zbQDImapYNo4Cx?usp=sharing"} >
                                 <div className={styles.projectLink}>
-                                    Live App
+                                    Download
                                 </div>
                             </a>
                         </div>
@@ -165,7 +167,7 @@ function App() {
                                 A Journaling website made with Next.js and firebase that allows users to
                                 write journals and reflect on them through statistics
                             </p>
-                            <a href={""} >
+                            <a href={"https://dreamlog-snowy.vercel.app/"} >
                                 <div className={styles.projectLink}>
                                     Live App
                                 </div>
@@ -180,7 +182,7 @@ function App() {
                                 A 1 vs 1 fighting game made in Javascript that can be played
                                 through a browser. Has multiple characters, moveset and more.
                             </p>
-                            <a href={""} >
+                            <a href={"https://browser-game-two.vercel.app/"} >
                                 <div className={styles.projectLink}>
                                     Live App
                                 </div>
@@ -200,32 +202,6 @@ function App() {
                         <a href="https://github.com/your-profile" target="_blank" rel="noopener noreferrer"><FaGithub /> GitHub</a>
                     </p>
                 </div>
-                <form name="msgme" onSubmit={handleSubmit}>
-                    <input
-                        type="text"
-                        name="name"
-                        placeholder="Your Name"
-                        className={styles.contactInput}
-                        required
-                    />
-                    <input
-                        type="email" // Use email type for better validation
-                        name="email"
-                        placeholder="Your Email"
-                        className={styles.contactInput}
-                        required
-                    />
-                    <textarea
-                        name="message"
-                        rows="6" // Fix the "rows" attribute typo
-                        placeholder="Your Message"
-                        className={styles.contactInput}
-                        required
-                    ></textarea>
-                    <button className={styles.button} type="submit">
-                        Send Message
-                    </button>
-                </form>
             </div>
             <div className={styles.background}>Background Text</div>
         </div>
